@@ -1,0 +1,26 @@
+Title: [BUG] Short, descriptive title
+
+Description:
+What exactly is broken?
+
+Expected Behavior:
+What should happen?
+
+Actual Behavior:
+What actually happens?
+
+Reproduction Steps:
+1.
+2.
+3.
+
+Environment:
+- Browser / OS
+- Network conditions
+- Wallet / App state (if relevant)
+
+Impact:
+Low / Medium / High / Critical
+
+Evidence:
+Logs, screenshots, recordings, or traces
