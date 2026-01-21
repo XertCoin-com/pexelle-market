@@ -1,5 +1,9 @@
 # Pexelle Market
 
+
+<img width="1918" height="1043" alt="image" src="https://github.com/user-attachments/assets/7d785467-20f3-49a6-8635-d643ece0d7e9" />
+
+
 ## Open Infrastructure for Verifiable Skills & Real Job Matching
 
 Pexelle Market is the public-facing collaboration layer of the Pexelle ecosystem.
@@ -57,6 +61,12 @@ Trust in recruitment is broken.
 
 - Hiring-domain experts with technical depth
 
+
+
+<img width="1918" height="1043" alt="image" src="https://github.com/user-attachments/assets/5351deec-0c76-457a-af3e-b05138a6c320" />
+
+
+
 ## You are expected to:
 
 - Find bugs
@@ -83,6 +93,10 @@ Trust in recruitment is broken.
 
 If you’re here for hype, leave.
 If you’re here to improve the system, stay.
+
+
+<img width="1424" height="727" alt="image" src="https://github.com/user-attachments/assets/94a1bfbe-ab14-4fc4-82dc-3632f92989e2" />
+
 
 ## Getting Started
 
