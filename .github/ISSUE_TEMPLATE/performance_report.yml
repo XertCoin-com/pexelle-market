@@ -1,0 +1,174 @@
+name: ⚡ Performance / Regression Report
+description: Report slowdowns, regressions, high latency, memory/CPU spikes, or throughput drops
+title: "[PERF] "
+labels: ["performance", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Read before submitting**
+        
+        This form is for **measurable performance issues**:
+        - Latency, slow UI, API timeouts
+        - CPU / memory spikes
+        - Throughput drops
+        - Regression after a known change
+        
+        If you cannot provide **numbers** (before/after or at least current measurements), your report will be closed.
+
+  - type: input
+    id: reporter
+    attributes:
+      label: Reporter / GitHub Username
+      placeholder: "@your-username"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date (UTC)
+      placeholder: "2026-01-22"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: perf_type
+    attributes:
+      label: Performance Issue Type
+      options:
+        - Latency increase (API / backend)
+        - UI slowness / jank
+        - Timeouts / retries
+        - CPU spike
+        - Memory leak / growth over time
+        - Bundle size / load time
+        - Database / query slowdown
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / Flow Affected
+      options:
+        - QR Auth / Account Linking
+        - Evidence Upload / Verification
+        - Skill Graph / Profile
+        - Job Discovery / Search
+        - Job Apply / Dynamic Resume
+        - AI Roadmap Generation
+        - Market Analytics / Insights
+        - General / Cross-cutting
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One clear sentence describing what got slower.
+      placeholder: "Example: AI roadmap generation takes 25–40s instead of ~5s for similar profiles."
+    validations:
+      required: true
+
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Baseline vs Current (Numbers Required)
+      description: Provide before/after metrics if possible. If not, provide current measurements and why baseline is unknown.
+      placeholder: |
+        Baseline (before):
+        - Metric:
+        - Value:
+        - When/where measured:
+        
+        Current (now):
+        - Metric:
+        - Value:
+        - When/where measured:
+
+        Notes:
+        - Confidence level:
+        - Measurement method:
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce (Benchmark Steps)
+      description: Deterministic steps to reproduce the performance issue.
+      placeholder: |
+        1.
+        2.
+        3.
+        Include dataset/profile size, job id, or evidence count if relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS:
+        Browser / App version:
+        Device (CPU/RAM):
+        Network conditions:
+        Account state (new / existing / seeded):
+    validations:
+      required: true
+
+  - type: textarea
+    id: traces
+    attributes:
+      label: Evidence (Required)
+      description: Attach traces, logs, screenshots, HAR files, profiler output, or console logs. No evidence = no triage.
+      placeholder: |
+        - Screenshots / screen recording:
+        - Browser DevTools Performance profile:
+        - Network HAR:
+        - Server logs / request ids:
+        - Metrics dashboard snapshots (if any):
+    validations:
+      required: true
+
+  - type: textarea
+    id: suspected
+    attributes:
+      label: Suspected Cause (Optional)
+      description: If you have a hypothesis, state it clearly.
+      placeholder: |
+        Example: regression started after commit X / release Y
+        Example: query N+1 suspected in job search
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact Level
+      options:
+        - 🟡 Low (annoying but usable)
+        - 🟠 Medium (blocks some users / flows)
+        - 🔴 High (core flow becomes painful)
+        - 🚨 Critical (timeouts / unusable / data risk)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Final Confirmation
+      options:
+        - label: I provided measurable metrics (baseline/current or at least current with method)
+          required: true
+        - label: I included evidence (logs/traces/HAR/profile) or explained why it cannot be obtained
+          required: true
+        - label: This is not a security exploit
+          required: true
