@@ -1,0 +1,140 @@
+name: 💡 Feature / Improvement Proposal
+description: Propose a feature or improvement with clear problem, scope, and trade-offs
+title: "[FEATURE] "
+labels: ["enhancement", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Read before submitting**
+        
+        This is for **actionable proposals** only.
+        - No vague ideas
+        - No "it would be cool if..."
+        - No roadmap demands
+        
+        If you can't describe the problem, scope, and trade-offs, your proposal will be closed.
+
+  - type: input
+    id: proposer
+    attributes:
+      label: Proposer / GitHub Username
+      placeholder: "@your-username"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Identity / Authentication
+        - Evidence Integrity
+        - Skill & Evidence Mapping
+        - Job Matching
+        - AI Roadmap Generation
+        - Market Analytics
+        - UX / Trust Communication
+        - Performance / Scalability
+        - Developer Experience / Tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What is the specific problem this solves?
+      placeholder: |
+        Describe the pain clearly.
+        Who is affected?
+        What breaks or fails today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_limitations
+    attributes:
+      label: Current Limitation
+      description: Why is the current behavior insufficient?
+      placeholder: |
+        Explain the limitation in the current system.
+        Include examples if possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: What exactly do you propose to change or add?
+      placeholder: |
+        Be specific.
+        What changes in behavior?
+        What new screens/APIs/data structures are needed (if any)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Trade-offs & Risks
+      description: What do we lose by doing this? What could go wrong?
+      placeholder: |
+        Performance cost?
+        Security implications?
+        UX complexity?
+        Data integrity risks?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches did you consider and why are they worse?
+      placeholder: |
+        Option A...
+        Option B...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope Estimate
+      options:
+        - XS (few hours)
+        - S (1–2 days)
+        - M (up to 1 week)
+        - L (1–3 weeks)
+        - XL (multi-week / architectural)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Define what "done" means in testable terms.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Final Confirmation
+      options:
+        - label: I described the problem clearly (not just an idea)
+          required: true
+        - label: I included trade-offs and alternatives
+          required: true
+        - label: I defined acceptance criteria
+          required: true
