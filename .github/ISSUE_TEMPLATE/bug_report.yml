@@ -1,0 +1,173 @@
+name: 🐞 Bug Report
+description: Report a reproducible bug in Pexelle Market
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Read before submitting**
+        
+        This form is for **real, reproducible bugs only**.
+        - No opinions
+        - No feature requests
+        - No security exploits (see security policy)
+        
+        Low-effort reports will be closed.
+
+  - type: input
+    id: tester
+    attributes:
+      label: Tester / GitHub Username
+      description: Who is reporting this issue?
+      placeholder: "@your-username"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date (UTC)
+      placeholder: "2026-01-22"
+    validations:
+      required: true
+
+  - type: input
+    id: scenario
+    attributes:
+      label: Related Test Scenario (if any)
+      description: Reference a scenario from TEST_SCENARIOS.md
+      placeholder: "e.g. QR Replay Attack"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Bug Category
+      options:
+        - Identity / Authentication
+        - Evidence Integrity
+        - Skill & Evidence Mapping
+        - Job Matching
+        - AI Roadmap Generation
+        - Market Analytics
+        - UX / Trust Communication
+        - Performance / Scalability
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clearly describe what is broken.
+      placeholder: |
+        What is happening?
+        What part of the system is affected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: |
+        What should have happened according to system guarantees?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      placeholder: |
+        What actually happened?
+        Be factual. No speculation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Numbered, deterministic steps only.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact Level
+      options:
+        - 🟢 Informational
+        - 🟡 Low
+        - 🟠 Medium
+        - 🔴 High
+        - 🚨 Critical
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact_reason
+    attributes:
+      label: Impact Justification
+      description: Explain why this impact level is correct.
+      placeholder: |
+        Who is affected?
+        What trust guarantee is broken?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS:
+        Browser / App version:
+        Network conditions:
+        Account state:
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, screenshots, traces, recordings, hashes.
+      placeholder: |
+        Attach files or paste logs here.
+        No evidence = no bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: analysis
+    attributes:
+      label: Technical Analysis (Optional but Strongly Encouraged)
+      description: Why do you think this happens?
+      placeholder: |
+        Possible root cause
+        Design vs implementation issue
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Final Confirmation
+      options:
+        - label: I confirm this report is reproducible
+          required: true
+        - label: I did not exploit real user data
+          required: true
+        - label: This is not a security exploit (or I reported it privately)
+          required: true
