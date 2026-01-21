@@ -1,0 +1,202 @@
+name: 🧪 Test Result / Finding
+description: Report adversarial test results, suspicious behavior, or trust-related findings (not necessarily confirmed bugs yet)
+title: "[TEST] "
+labels: ["test-finding", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Read before submitting**
+        
+        Use this for **testing findings** and adversarial validation:
+        - You tested a scenario and found unexpected behavior
+        - You suspect a design flaw or trust break
+        - You observed inconsistent verification or matching
+        
+        If your finding is fully reproducible and clearly a defect, you may still file a Bug Report —  
+        but this template is preferred for **trust-related and adversarial** findings.
+
+        🚨 **Security vulnerabilities must be reported privately** (see SECURITY policy). Do not post exploit details here.
+
+  - type: input
+    id: tester
+    attributes:
+      label: Tester / GitHub Username
+      placeholder: "@your-username"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date (UTC)
+      placeholder: "2026-01-22"
+    validations:
+      required: true
+
+  - type: input
+    id: scenario
+    attributes:
+      label: Test Scenario Name / ID
+      description: Reference TEST_SCENARIOS.md or describe your own scenario.
+      placeholder: "Example: QR Replay Attack / Evidence Replacement Attempt"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / Flow Tested
+      options:
+        - QR Auth / Account Linking
+        - Evidence Upload / Verification
+        - Evidence Immutability / Integrity
+        - Skill Claims & Evidence Mapping
+        - Dynamic Resume / Employer View
+        - Job Matching / Ranking
+        - AI Roadmap Generation
+        - Market Analytics / Trends
+        - UX / Trust Communication
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What exactly were you trying to validate or break?
+      placeholder: "Example: Validate whether QR tokens are single-use and bound to device/session."
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: What had to be true before you ran the test?
+      placeholder: |
+        - Account state:
+        - Evidence count / types:
+        - Job id / requirements:
+        - Timing constraints:
+        - Any feature flags:
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Step-by-step Reproduction
+      description: Numbered steps only. If not fully reproducible, state what is intermittent and under what conditions.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      placeholder: "What should have happened according to system guarantees?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed Result
+      placeholder: "What actually happened? Be factual. No speculation."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      options:
+        - Deterministic (reproduces every time)
+        - Intermittent (sometimes)
+        - Not yet reproducible (needs investigation)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity / Trust Impact
+      options:
+        - 🟢 Informational (interesting but no impact)
+        - 🟡 Low (minor trust/UX confusion)
+        - 🟠 Medium (could mislead employers/users)
+        - 🔴 High (breaks trust guarantees)
+        - 🚨 Critical (integrity/identity compromise suspected)
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact_reason
+    attributes:
+      label: Impact Justification
+      description: Explain what trust guarantee might be broken and who is affected.
+      placeholder: |
+        - Who is affected?
+        - What guarantee is violated?
+        - Can this be automated or scaled?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence (Required)
+      description: Logs, screenshots, recordings, traces, request ids, hashes. No evidence = no triage.
+      placeholder: |
+        - Screenshots / recordings:
+        - Console logs:
+        - Network traces / HAR:
+        - Request IDs / timestamps:
+        - Transaction hashes (if relevant):
+    validations:
+      required: true
+
+  - type: textarea
+    id: analysis
+    attributes:
+      label: Analysis / Hypothesis (Optional but Valued)
+      description: Your technical reasoning about why this might happen.
+      placeholder: |
+        Possible root cause:
+        Trust boundary involved:
+        Design flaw vs implementation bug:
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested Fix (Optional)
+      description: Proposed mitigation or improvement (even partial).
+      placeholder: |
+        Validation changes:
+        Rate limits:
+        Snapshot semantics:
+        Stronger binding:
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Final Confirmation
+      options:
+        - label: I did not exploit real user data
+          required: true
+        - label: I included evidence or explained why it cannot be obtained
+          required: true
+        - label: This is not a security exploit (or I reported it privately)
+          required: true
