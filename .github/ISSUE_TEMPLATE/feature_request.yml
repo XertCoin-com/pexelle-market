@@ -56,15 +56,3 @@ body:
         High-level is fine.
     validations:
       required: true
-
-  - type: textarea
-    id: tradeoffs
-    attributes:
-      label: Trade-offs / Risks (Optional)
-      description: What might this break or complicate?
-      placeholder: |
-        Performance?
-        Security?
-        UX complexity?
-    validations:
-      required: false
