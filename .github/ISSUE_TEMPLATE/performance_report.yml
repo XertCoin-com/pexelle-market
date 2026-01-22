@@ -63,7 +63,7 @@ body:
   - type: textarea
     id: traces
     attributes:
-      label: Evidence (Required)
+      label: Evidence
       description: Attach traces, logs, screenshots, HAR files, profiler output, or console logs. No evidence = no triage.
       placeholder: |
         - Screenshots / screen recording:
