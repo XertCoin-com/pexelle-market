@@ -84,9 +84,3 @@ body:
     validations:
       required: true
 
-        - label: I provided measurable metrics (baseline/current or at least current with method)
-          required: true
-        - label: I included evidence (logs/traces/HAR/profile) or explained why it cannot be obtained
-          required: true
-        - label: This is not a security exploit
-          required: true
