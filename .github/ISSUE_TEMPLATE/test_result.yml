@@ -21,29 +21,11 @@ body:
         🚨 **Security vulnerabilities must be reported privately** (see SECURITY policy). Do not post exploit details here.
 
   - type: input
-    id: tester
-    attributes:
-      label: Tester / GitHub Username
-      placeholder: "@your-username"
-    validations:
-      required: true
-
-  - type: input
-    id: date
-    attributes:
-      label: Date (UTC)
-      placeholder: "2026-01-22"
-    validations:
-      required: true
-
-  - type: input
     id: scenario
     attributes:
       label: Test Scenario Name / ID
       description: Reference TEST_SCENARIOS.md or describe your own scenario.
       placeholder: "Example: QR Replay Attack / Evidence Replacement Attempt"
-    validations:
-      required: true
 
   - type: dropdown
     id: area
@@ -69,61 +51,6 @@ body:
       label: Objective
       description: What exactly were you trying to validate or break?
       placeholder: "Example: Validate whether QR tokens are single-use and bound to device/session."
-    validations:
-      required: true
-
-  - type: textarea
-    id: preconditions
-    attributes:
-      label: Preconditions
-      description: What had to be true before you ran the test?
-      placeholder: |
-        - Account state:
-        - Evidence count / types:
-        - Job id / requirements:
-        - Timing constraints:
-        - Any feature flags:
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps
-    attributes:
-      label: Step-by-step Reproduction
-      description: Numbered steps only. If not fully reproducible, state what is intermittent and under what conditions.
-      placeholder: |
-        1.
-        2.
-        3.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Result
-      placeholder: "What should have happened according to system guarantees?"
-    validations:
-      required: true
-
-  - type: textarea
-    id: observed
-    attributes:
-      label: Observed Result
-      placeholder: "What actually happened? Be factual. No speculation."
-    validations:
-      required: true
-
-  - type: dropdown
-    id: reproducibility
-    attributes:
-      label: Reproducibility
-      options:
-        - Deterministic (reproduces every time)
-        - Intermittent (sometimes)
-        - Not yet reproducible (needs investigation)
-    validations:
-      required: true
 
   - type: dropdown
     id: severity
@@ -139,21 +66,9 @@ body:
       required: true
 
   - type: textarea
-    id: impact_reason
-    attributes:
-      label: Impact Justification
-      description: Explain what trust guarantee might be broken and who is affected.
-      placeholder: |
-        - Who is affected?
-        - What guarantee is violated?
-        - Can this be automated or scaled?
-    validations:
-      required: true
-
-  - type: textarea
     id: evidence
     attributes:
-      label: Evidence (Required)
+      label: Evidence
       description: Logs, screenshots, recordings, traces, request ids, hashes. No evidence = no triage.
       placeholder: |
         - Screenshots / recordings:
@@ -161,8 +76,6 @@ body:
         - Network traces / HAR:
         - Request IDs / timestamps:
         - Transaction hashes (if relevant):
-    validations:
-      required: true
 
   - type: textarea
     id: analysis
@@ -173,30 +86,3 @@ body:
         Possible root cause:
         Trust boundary involved:
         Design flaw vs implementation bug:
-    validations:
-      required: false
-
-  - type: textarea
-    id: suggested_fix
-    attributes:
-      label: Suggested Fix (Optional)
-      description: Proposed mitigation or improvement (even partial).
-      placeholder: |
-        Validation changes:
-        Rate limits:
-        Snapshot semantics:
-        Stronger binding:
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Final Confirmation
-      options:
-        - label: I did not exploit real user data
-          required: true
-        - label: I included evidence or explained why it cannot be obtained
-          required: true
-        - label: This is not a security exploit (or I reported it privately)
-          required: true
