@@ -18,22 +18,6 @@ body:
         
         If you cannot provide **numbers** (before/after or at least current measurements), your report will be closed.
 
-  - type: input
-    id: reporter
-    attributes:
-      label: Reporter / GitHub Username
-      placeholder: "@your-username"
-    validations:
-      required: true
-
-  - type: input
-    id: date
-    attributes:
-      label: Date (UTC)
-      placeholder: "2026-01-22"
-    validations:
-      required: true
-
   - type: dropdown
     id: perf_type
     attributes:
@@ -77,54 +61,6 @@ body:
       required: true
 
   - type: textarea
-    id: baseline
-    attributes:
-      label: Baseline vs Current (Numbers Required)
-      description: Provide before/after metrics if possible. If not, provide current measurements and why baseline is unknown.
-      placeholder: |
-        Baseline (before):
-        - Metric:
-        - Value:
-        - When/where measured:
-        
-        Current (now):
-        - Metric:
-        - Value:
-        - When/where measured:
-
-        Notes:
-        - Confidence level:
-        - Measurement method:
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to Reproduce (Benchmark Steps)
-      description: Deterministic steps to reproduce the performance issue.
-      placeholder: |
-        1.
-        2.
-        3.
-        Include dataset/profile size, job id, or evidence count if relevant.
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      placeholder: |
-        OS:
-        Browser / App version:
-        Device (CPU/RAM):
-        Network conditions:
-        Account state (new / existing / seeded):
-    validations:
-      required: true
-
-  - type: textarea
     id: traces
     attributes:
       label: Evidence (Required)
@@ -135,19 +71,6 @@ body:
         - Network HAR:
         - Server logs / request ids:
         - Metrics dashboard snapshots (if any):
-    validations:
-      required: true
-
-  - type: textarea
-    id: suspected
-    attributes:
-      label: Suspected Cause (Optional)
-      description: If you have a hypothesis, state it clearly.
-      placeholder: |
-        Example: regression started after commit X / release Y
-        Example: query N+1 suspected in job search
-    validations:
-      required: false
 
   - type: dropdown
     id: impact
@@ -161,11 +84,6 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Final Confirmation
-      options:
         - label: I provided measurable metrics (baseline/current or at least current with method)
           required: true
         - label: I included evidence (logs/traces/HAR/profile) or explained why it cannot be obtained
