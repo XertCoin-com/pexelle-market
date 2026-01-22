@@ -1,5 +1,5 @@
-name: 💡 Feature / Improvement Proposal
-description: Propose a feature or improvement with clear problem, scope, and trade-offs
+name: 💡 Feature / Improvement
+description: Propose a feature or improvement for Pexelle Market
 title: "[FEATURE] "
 labels: ["enhancement", "needs-triage"]
 assignees: []
@@ -9,21 +9,13 @@ body:
     attributes:
       value: |
         ⚠️ **Read before submitting**
-        
-        This is for **actionable proposals** only.
-        - No vague ideas
-        - No "it would be cool if..."
-        - No roadmap demands
-        
-        If you can't describe the problem, scope, and trade-offs, your proposal will be closed.
 
-  - type: input
-    id: proposer
-    attributes:
-      label: Proposer / GitHub Username
-      placeholder: "@your-username"
-    validations:
-      required: true
+        This is for **concrete, actionable features**.
+        - No vague ideas
+        - No “it would be cool if…”
+        - No roadmap demands
+
+  # Title is handled by GitHub (Add a title *)
 
   - type: dropdown
     id: area
@@ -47,22 +39,10 @@ body:
     id: problem
     attributes:
       label: Problem Statement
-      description: What is the specific problem this solves?
+      description: What problem does this feature solve?
       placeholder: |
-        Describe the pain clearly.
+        What is the pain?
         Who is affected?
-        What breaks or fails today?
-    validations:
-      required: true
-
-  - type: textarea
-    id: current_limitations
-    attributes:
-      label: Current Limitation
-      description: Why is the current behavior insufficient?
-      placeholder: |
-        Explain the limitation in the current system.
-        Include examples if possible.
     validations:
       required: true
 
@@ -70,71 +50,21 @@ body:
     id: proposal
     attributes:
       label: Proposed Solution
-      description: What exactly do you propose to change or add?
+      description: What do you propose to add or change?
       placeholder: |
-        Be specific.
-        What changes in behavior?
-        What new screens/APIs/data structures are needed (if any)?
+        Describe the solution briefly.
+        High-level is fine.
     validations:
       required: true
 
   - type: textarea
     id: tradeoffs
     attributes:
-      label: Trade-offs & Risks
-      description: What do we lose by doing this? What could go wrong?
+      label: Trade-offs / Risks (Optional)
+      description: What might this break or complicate?
       placeholder: |
-        Performance cost?
-        Security implications?
+        Performance?
+        Security?
         UX complexity?
-        Data integrity risks?
     validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: What other approaches did you consider and why are they worse?
-      placeholder: |
-        Option A...
-        Option B...
-    validations:
-      required: true
-
-  - type: dropdown
-    id: scope
-    attributes:
-      label: Scope Estimate
-      options:
-        - XS (few hours)
-        - S (1–2 days)
-        - M (up to 1 week)
-        - L (1–3 weeks)
-        - XL (multi-week / architectural)
-    validations:
-      required: true
-
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: Acceptance Criteria
-      description: Define what "done" means in testable terms.
-      placeholder: |
-        - [ ] ...
-        - [ ] ...
-        - [ ] ...
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Final Confirmation
-      options:
-        - label: I described the problem clearly (not just an idea)
-          required: true
-        - label: I included trade-offs and alternatives
-          required: true
-        - label: I defined acceptance criteria
-          required: true
+      required: false
