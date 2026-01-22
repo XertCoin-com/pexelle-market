@@ -9,30 +9,13 @@ body:
     attributes:
       value: |
         ⚠️ **Read before submitting**
-        
+
         This form is for **real, reproducible bugs only**.
         - No opinions
         - No feature requests
         - No security exploits (see security policy)
-        
-        Low-effort reports will be closed.
 
-  - type: input
-    id: tester
-    attributes:
-      label: Tester / GitHub Username
-      description: Who is reporting this issue?
-      placeholder: "@your-username"
-    validations:
-      required: true
-
-  - type: input
-    id: date
-    attributes:
-      label: Date (UTC)
-      placeholder: "2026-01-22"
-    validations:
-      required: true
+  # Title is handled by GitHub itself (Add a title *)
 
   - type: input
     id: scenario
@@ -64,41 +47,10 @@ body:
     id: description
     attributes:
       label: Bug Description
-      description: Clearly describe what is broken.
+      description: What is broken?
       placeholder: |
         What is happening?
-        What part of the system is affected?
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Behavior
-      placeholder: |
-        What should have happened according to system guarantees?
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual Behavior
-      placeholder: |
-        What actually happened?
-        Be factual. No speculation.
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to Reproduce
-      description: Numbered, deterministic steps only.
-      placeholder: |
-        1.
-        2.
-        3.
+        Which part of the system is affected?
     validations:
       required: true
 
@@ -116,38 +68,14 @@ body:
       required: true
 
   - type: textarea
-    id: impact_reason
-    attributes:
-      label: Impact Justification
-      description: Explain why this impact level is correct.
-      placeholder: |
-        Who is affected?
-        What trust guarantee is broken?
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      placeholder: |
-        OS:
-        Browser / App version:
-        Network conditions:
-        Account state:
-    validations:
-      required: true
-
-  - type: textarea
     id: evidence
     attributes:
       label: Evidence
-      description: Logs, screenshots, traces, recordings, hashes.
+      description: Logs, screenshots, recordings, traces, etc. (strongly recommended)
       placeholder: |
-        Attach files or paste logs here.
-        No evidence = no bug.
+        Paste logs or attach files if available.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: analysis
@@ -159,15 +87,3 @@ body:
         Design vs implementation issue
     validations:
       required: false
-
-  - type: checkboxes
-    id: confirmation
-    attributes:
-      label: Final Confirmation
-      options:
-        - label: I confirm this report is reproducible
-          required: true
-        - label: I did not exploit real user data
-          required: true
-        - label: This is not a security exploit (or I reported it privately)
-          required: true
