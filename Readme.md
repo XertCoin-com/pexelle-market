@@ -127,11 +127,11 @@ If you’re here to improve the system, stay.
 
 ## Changelog
 
-## v3.2.5 - 2026-01-25
+### v3.2.5 - 2026-01-25
 
-### Improvements
+#### Improvements
 - Improved mobile and tablet user interface
 - Added GitHub repository link to the project ([#3](https://github.com/XertCoin-com/pexelle-market/issues/3))
 
-### Bug Fixes
+#### Bug Fixes
 - Fixed missing redirect after map creation ([#2](https://github.com/XertCoin-com/pexelle-market/issues/2))
