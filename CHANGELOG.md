@@ -2,7 +2,7 @@
 
 ### Improvements
 - Improved mobile and tablet user interface
-- Added GitHub repository link to the project
+- Added GitHub repository link to the project (#3)
 
 ### Bug Fixes
-- Fixed missing redirect after map creation
+- Fixed missing redirect after map creation (#2)
