@@ -81,16 +81,6 @@ Trust in recruitment is broken.
 
 - Opinions without evidence will be ignored.
 
-## What This Repo Is NOT
-
-- Not a résumé builder
-
-- Not a generic learning platform
-
-- Not a closed startup showcase
-
-- Not a Web3 marketing repo
-
 If you’re here for hype, leave.
 If you’re here to improve the system, stay.
 
